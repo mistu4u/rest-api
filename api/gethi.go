@@ -7,6 +7,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+type IApi interface {
+	SayHi(c *gin.Context)
+}
 type HiAPI struct {
 	HiService service.HiService
 }
