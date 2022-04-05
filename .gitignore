@@ -1,2 +1,3 @@
-rest-api.exe
-wire_gen.go
+.rest-api.exe
+.wire_gen.go
+.vendor/
