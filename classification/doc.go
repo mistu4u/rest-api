@@ -15,7 +15,7 @@
 //     BasePath: /v2
 //     Version: 0.0.1
 //     License: MIT http://opensource.org/licenses/MIT
-//     Contact: John Doe<john.doe@example.com> http://john.doe.com
+//     Contact: Subir Adhikari <subir.adhikari@rsystems.com>
 //
 //     Consumes:
 //     - application/json

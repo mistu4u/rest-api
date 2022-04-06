@@ -1,8 +1,8 @@
 check-swagger:
-	which swagger || (go get -u github.com/go-swagger/go-swagger/cmd/swagger)
+	./install.sh
 
 swagger: check-swagger
 	GO111MODULE=on go mod vendor  && GO111MODULE=off swagger generate spec -o ./swagger.yaml --scan-models
 
-serve-swagger: check-swagger
+serve-swagger: 
 	swagger serve -F=swagger swagger.yaml
