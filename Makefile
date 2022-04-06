@@ -6,3 +6,10 @@ swagger: check-swagger
 
 serve-swagger: 
 	swagger serve -F=swagger swagger.yaml
+
+dev-up:
+	docker-compose up -d
+	
+dev-down:
+	docker-compose down
+    
