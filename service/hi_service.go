@@ -1,9 +1,14 @@
 package service
 
-import "rest-api/repo"
+import (
+	"rest-api/dto"
+	"rest-api/repo"
+
+	"github.com/google/wire"
+)
 
 type IHiService interface {
-	SayHi() string
+	SayHi() dto.MyMessage
 }
 type HiService struct {
 	Repo repo.HiRepo
@@ -13,6 +18,7 @@ func NewService(r repo.HiRepo) HiService {
 	return HiService{Repo: r}
 }
 
-func (s *HiService) SayHi() string {
+func (s HiService) SayHi() dto.MyMessage {
 	return s.Repo.SayHi()
 }
+var HiServiceSet = wire.NewSet(NewService, wire.Bind(new(IHiService), new(HiService)))
