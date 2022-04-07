@@ -1,3 +1,4 @@
 rest-api.exe
 wire_gen.go
 vendor/
+mocks/

@@ -11,7 +11,7 @@ type IHiService interface {
 	SayHi() dto.MyMessage
 }
 type HiService struct {
-	Repo repo.HiRepo
+	Repo repo.IHiRepo
 }
 
 func NewService(r repo.HiRepo) HiService {
