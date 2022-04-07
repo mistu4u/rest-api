@@ -12,6 +12,6 @@ import (
 )
 
 func initApi() api.HiAPI {
-	wire.Build(api.NewApi, service.NewService, repo.NewRepo)
+	wire.Build(api.HiAPISet, service.HiServiceSet, repo.MessageRepoSet)
 	return api.HiAPI{}
 }
