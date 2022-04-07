@@ -1,5 +1,5 @@
 #!/bin/bash
-dir='vendor'
+dir='swagger'
 rm -rf "$dir" 
 git clone https://github.com/go-swagger/go-swagger "$dir" 
 cd "$dir"

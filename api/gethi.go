@@ -13,7 +13,7 @@ type IApi interface {
 }
 
 type HiAPI struct {
-	HiService service.HiService
+	HiService service.IHiService
 }
 
 func NewApi(h service.HiService) HiAPI {
