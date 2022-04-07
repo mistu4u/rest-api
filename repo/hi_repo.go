@@ -1,9 +1,12 @@
 package repo
 
 import (
+	"fmt"
+	"rest-api/db"
 	"rest-api/dto"
 
 	"github.com/google/wire"
+	"gorm.io/gorm"
 )
 
 type IHiRepo interface{
@@ -11,11 +14,16 @@ type IHiRepo interface{
 }
 
 type HiRepo struct {
-
+	db *gorm.DB
 }
 
 func NewRepo() HiRepo {
-	return HiRepo{}
+	ldb,err:=db.NewRepositories()
+	if err!=nil{
+		fmt.Println("error occurred")
+	}
+	k:=*ldb
+	return HiRepo{db: k.Gdb}
 }
 
 func (r HiRepo) SayHi() dto.MyMessage {
