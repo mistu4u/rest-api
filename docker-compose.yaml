@@ -8,6 +8,8 @@ services:
     ports:
       - '8080:8080'
     restart: unless-stopped
+    env_file:
+      - app.env
     networks:
        - backend
     depends_on:
@@ -23,6 +25,9 @@ services:
       - '5432:5432'
     volumes:
       - db:/var/lib/postgresql/data
+    networks:
+      - backend
+
 volumes:
     db:
       driver: local
@@ -30,3 +35,4 @@ volumes:
 
 networks:
   backend: 
+    driver: bridge

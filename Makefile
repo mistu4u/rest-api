@@ -15,3 +15,9 @@ dev-down:
 
 create-mock:
 	mockery --all --recursive --output ./mocks
+
+db-up:
+	docker-compose up -d db
+
+db-down:
+	docker-compose down
