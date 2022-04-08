@@ -21,7 +21,7 @@ func NewRepo() HiRepo {
 	
 	ldb,err:=db.NewDBConn()
 	if err!=nil{
-		fmt.Println("error occurred")
+		fmt.Println("error occurred in obtaining new db connection")
 	}
 	return HiRepo{db: ldb.Gdb}
 }
