@@ -14,7 +14,10 @@ dev-down:
 	docker-compose down
 
 create-mock:
-	mockery --all --recursive --output ./mocks
+	mockery --all --dir api --dir repo --dir service --recursive --output ./mocks
+
+test: create-mock
+	go test ./...
 
 db-up:
 	docker-compose up -d db
