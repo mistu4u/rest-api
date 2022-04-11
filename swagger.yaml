@@ -1,7 +1,6 @@
-basePath: /v2
+basePath: /v1
 consumes:
 - application/json
-- application/xml
 host: localhost
 info:
   contact:
@@ -9,21 +8,15 @@ info:
     name: Subir Adhikari
   description: |-
     the purpose of this application is to provide an application
-    that is using plain go code to define an API
+    that is using plain go code with gin gonic to define an API
 
     This should demonstrate all the possible comment annotations
     that are available to turn go code into a fully compliant swagger 2.0 spec
-  license:
-    name: MIT
-    url: http://opensource.org/licenses/MIT
-  termsOfService: there are no TOS at this moment, use at your own risk we take no
-    responsibility
-  title: for rest api
+  title: rest api demo
   version: 0.0.1
 paths: {}
 produces:
 - application/json
-- application/xml
 schemes:
 - http
 - https
@@ -43,10 +36,3 @@ securityDefinitions:
     tokenUrl: /oauth2/token
     type: oauth2
 swagger: "2.0"
-x-meta-array:
-- value1
-- value2
-x-meta-array-obj:
-- name: obj
-  value: field
-x-meta-value: value

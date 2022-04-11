@@ -2,9 +2,9 @@ check-swagger:
 	./install.sh
 
 swagger: check-swagger
-	GO111MODULE=on go mod vendor  && GO111MODULE=off swagger generate spec -o ./swagger.yaml --scan-models
+	swagger generate spec -o ./swagger.yaml --scan-models
 
-serve-swagger: 
+serve-swagger: swagger
 	swagger serve -F=swagger swagger.yaml
 
 dev-up:
@@ -14,7 +14,10 @@ dev-down:
 	docker-compose down
 
 create-mock:
-	mockery --all --recursive --output ./mocks
+	mockery --all --dir api --dir repo --dir service --recursive --output ./mocks
+
+test: create-mock
+	go test ./...
 
 db-up:
 	docker-compose up -d db
