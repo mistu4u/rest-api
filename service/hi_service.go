@@ -21,4 +21,5 @@ func NewService(r repo.HiRepo) HiService {
 func (s HiService) SayHi() dto.MyMessage {
 	return s.Repo.SayHi()
 }
+
 var HiServiceSet = wire.NewSet(NewService, wire.Bind(new(IHiService), new(HiService)))
