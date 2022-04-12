@@ -29,7 +29,7 @@ func (r HiRepo) SayHi() dto.MyMessage {
 	log := logger.NewLogger()
 	log.Info("hello")
 	var mes dto.MyMessage
-	r.db.Table("message").First(&mes,"id=?","11e41e52-0333-47c2-af3b-791a68ba6ad0")
+	r.db.Table("message").First(&mes, "id=?", "11e41e52-0333-47c2-af3b-791a68ba6ad0")
 	return mes
 }
 
