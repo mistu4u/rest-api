@@ -34,16 +34,16 @@ func NewMock() (*gorm.DB, sqlmock.Sqlmock) {
 
 	return gormDB, mock
 }
+
 //TestWithMockDB tests the sql queries generated using mock
-func TestWithMockDB(t *testing.T){
+func TestWithMockDB(t *testing.T) {
 	gormDB, mock := NewMock()
 	repo := HiRepo{gormDB}
- 	query := `SELECT * FROM "message" WHERE id=$1 ORDER BY "message"."message_text" LIMIT 1`
-	rows := sqlmock.NewRows([]string{"id","message_text"}).
-		AddRow("11e41e52-0333-47c2-af3b-791a68ba6ad0","hi from postgres db")
+	query := `SELECT * FROM "message" WHERE id=$1 ORDER BY "message"."message_text" LIMIT 1`
+	rows := sqlmock.NewRows([]string{"id", "message_text"}).
+		AddRow("11e41e52-0333-47c2-af3b-791a68ba6ad0", "hi from postgres db")
 	mock.ExpectQuery(regexp.QuoteMeta(query)).WithArgs("11e41e52-0333-47c2-af3b-791a68ba6ad0").WillReturnRows(rows)
-	res:=repo.SayHi() 	
+	res := repo.SayHi()
 
-	assert.NotNil(t,res)
+	assert.NotNil(t, res)
 }
-

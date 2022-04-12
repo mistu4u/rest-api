@@ -7,7 +7,10 @@ swagger: check-swagger
 serve-swagger: swagger
 	swagger serve -F=swagger swagger.yaml
 
-dev-up:
+go-lint:
+	gofmt -s -w . && go vet ./...
+
+dev-up: go-lint
 	docker-compose up --build -d
 	
 dev-down:

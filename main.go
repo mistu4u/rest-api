@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	r := gin.Default()	
+	r := gin.Default()
 	r.Use(middleware.HiMiddlware())
 
 	api := initApi()

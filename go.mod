@@ -7,7 +7,9 @@ require (
 	github.com/gin-gonic/gin v1.7.7
 	github.com/go-playground/assert/v2 v2.0.1
 	github.com/google/wire v0.5.0
+	github.com/mattn/go-colorable v0.1.6
 	github.com/stretchr/testify v1.7.1
+	go.uber.org/zap v1.13.0
 	gorm.io/gorm v1.23.1
 )
 
@@ -22,7 +24,11 @@ require (
 	github.com/jackc/pgx/v4 v4.15.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.4 // indirect
+	go.uber.org/atomic v1.6.0 // indirect
+	go.uber.org/multierr v1.5.0 // indirect
+	golang.org/x/lint v0.0.0-20190930215403-16217165b5de // indirect
 	golang.org/x/text v0.3.7 // indirect
+	golang.org/x/tools v0.0.0-20200103221440-774c71fcf114 // indirect
 )
 
 require (
