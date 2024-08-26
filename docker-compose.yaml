@@ -1,4 +1,3 @@
-version: '3.9'
 services:
   app:
     container_name: go-app
@@ -18,12 +17,20 @@ services:
 
   db:
     container_name: postgres
-    image: postgres:latest
+    build:
+      context: .
+      dockerfile: postgres.dockerfile
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     ports:
       - '5432:5432'
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-d", "postgres", "-U", "postgres" ]
+      interval: 1m30s
+      timeout: 30s
+      retries: 5
+      start_period: 30s
     volumes:
       - db:/var/lib/postgresql/data
     networks:
