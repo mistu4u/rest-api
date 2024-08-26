@@ -1,4 +1,5 @@
 rest-api.exe
+rest-api
 wire_gen.go
 vendor/
 mocks/
