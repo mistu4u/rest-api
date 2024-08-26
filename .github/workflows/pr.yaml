@@ -20,12 +20,12 @@ jobs:
       uses: actions/setup-go@v4
       with:
         go-version: '1.23'
-        
-    - name: Set up wire
-      run: go install github.com/google/wire/cmd/wire@latest && wire
 
-    - name: Build
-      run: go build -v ./...
+    - name: Download dependencies and execute wire
+      run: go mod tidy && go install github.com/google/wire/cmd/wire@latest && wire
 
     - name: Test
       run: go test -v ./...
+
+    - name: Build
+      run: go build -v ./...
