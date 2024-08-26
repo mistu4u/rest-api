@@ -11,7 +11,7 @@ To run it pls execute the below commands,
 
 3) Run the tests:
 
-    ```go test ./...```
+    ```mockery --all && go test ./...```
 
 4) run it 
 
