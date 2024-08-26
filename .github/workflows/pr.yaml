@@ -23,6 +23,9 @@ jobs:
 
     - name: Download dependencies and execute wire
       run: go mod tidy && go install github.com/google/wire/cmd/wire@latest && wire
+    
+    - name: Create mocks
+      run: go test -v ./...
 
     - name: Test
       run: go test -v ./...
