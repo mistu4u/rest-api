@@ -20,15 +20,6 @@ jobs:
       uses: actions/setup-go@v4
       with:
         go-version: '1.23'
-    - name: Cache Go modules
-      uses: actions/cache@v3
-      with:
-        path: |
-          ${{ github.workspace }}/go.sum
-          ${{ github.workspace }}/go.mod
-        key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
-        restore-keys: |
-          ${{ runner.os }}-go-
 
     - name: Download dependencies and execute wire
       run: go mod tidy && go install github.com/google/wire/cmd/wire@latest && go install github.com/vektra/mockery/v2@v2.45.0 && wire
