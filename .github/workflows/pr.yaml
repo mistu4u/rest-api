@@ -31,8 +31,7 @@ jobs:
           ${{ runner.os }}-go-
 
     - name: Download dependencies and execute wire
-      run: go mod tidy && go mod download && go install github.com/google/wire/cmd/wire@latest\
-           && go install github.com/vektra/mockery/v2@v2.45.0 && wire
+      run: go mod tidy && go install github.com/google/wire/cmd/wire@latest && go install github.com/vektra/mockery/v2@v2.45.0 && wire
     
     - name: Verify module integrity
       run: go mod verify    
