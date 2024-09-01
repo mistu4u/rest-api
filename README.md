@@ -21,3 +21,15 @@ Using docker:
 
 1) Simply type ```docker compose up``` to bring up the services.
 2) ```docker compose down``` to stop the services.
+
+
+**Local Testing**
+1) Build the executable
+    ```go build . -o rest-api```
+
+2) Bring up the db:
+    ```docker compose up -d db```
+
+2) Run it
+    ```DB_HOST=localhost ./rest-api```
+    make sure the db is already running.

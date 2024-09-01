@@ -10,7 +10,7 @@ func main() {
 	r := gin.Default()
 	r.Use(middleware.HiMiddlware())
 
-	api := initApi()
+	api := InitApi()
 	r.GET("/hi", api.SayHi)
 	r.Run()
 }

@@ -23,7 +23,7 @@ test: create-mock
 	go test ./...
 
 db-up:
-	docker-compose up -d db
+	docker compose up -d db
 
 db-down:
-	docker-compose down
+	docker compose down
